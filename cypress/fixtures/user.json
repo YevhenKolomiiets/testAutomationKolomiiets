@@ -1,0 +1,15 @@
+{
+  "firstName": "firstName",
+  "lastName": "lastName",
+  "email": "1@gm.io",
+  "phoneNumber": "134374",
+  "fax": "643824237",
+  "company": "Company",
+  "address": "Hello st. 467/5",
+  "city": "City",
+  "region": "Bristol",
+  "zip": "GR53453",
+  "country": "United Kingdom",
+  "loginName": "qafor",
+  "password": "123456Qw"
+}
