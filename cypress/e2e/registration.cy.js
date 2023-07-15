@@ -1,7 +1,21 @@
-import user from '../fixtures/user.json'
+import user from '../fixtures/user.json';
+import { faker } from '@faker-js/faker';
+import {loginViaUI} from '../support/helper';
+
+user.address = faker.location.streetAddress();
+    user.city = faker.location.city();
+    user.company = faker.company.name();
+    user.email = faker.internet.email();
+    user.firstName = faker.person.firstName();
+    user.lastName = faker.person.lastName();
+    user.loginName = faker.internet.userName();
+    user.password = faker.internet.password({length: 20});
+    user.phoneNumber = faker.phone.number('+380## ### ## ##');
+    user.zip = faker.location.zipCode();
 
 describe('template spec', () => {
   it('passes', () => {
+
     cy.visit('/');
 
     cy.log("**Opening registration form**")
@@ -41,6 +55,10 @@ describe('template spec', () => {
     cy.get('#loginFrm button').click();
 
     cy.get('.heading1 .subtext').should('have.text', user.firstName);
+  })
+
+  it('Login user with helper function', () => {
+    loginViaUI(user);
   })
 
 })
